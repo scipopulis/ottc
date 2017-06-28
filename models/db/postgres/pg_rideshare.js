@@ -101,7 +101,7 @@ RideshareOperation.findRide = function (ride_id,callback) {
 
 RideshareOperation.updateRide = function (obj,callback) {
 	console.log("UPDATERIDE");
-	db.none("UPDATE rides SET ride_status = ${ride_status}, data = ${data}, endposition_location = ${endposition_location}, num_positions = ${num_positions},distance_meters = ${distance_meters} WHERE id = ${id};",obj)
+	db.none("UPDATE rides SET ride_status = ${ride_status}, data = ${data}, endposition_location = ${endposition_location}, end_at = ${end_at}, num_positions = ${num_positions},distance_meters = ${distance_meters} WHERE id = ${id};",obj)
 		.then(function(){
 			return callback(null,obj);
 		})

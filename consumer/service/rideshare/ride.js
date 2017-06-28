@@ -158,6 +158,7 @@ var updateRidePosition = function(message,callback){
         reference.data.endPosition = message.loc;
         reference.num_positions += 1;
         reference.end_at = message.collected_at;
+        reference.elapsed_time = (reference.end_at.getTime() - reference.begin_at.getTime())/1000;
         reference.endposition_location = "("+message.loc.lat+","+ message.loc.lng+")";
 
         logger.debug("Reference EndPosition:",message.loc);
